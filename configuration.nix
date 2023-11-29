@@ -22,6 +22,12 @@
       # networking
       ./settings/networking.nix
       ./settings/firewall.nix
+
+      # services
+      ./services/jellyfin.nix
+      ./services/sonarr.nix
+      ./services/radarr.nix
+      ./services/deluge.nix
     ];
 
   # Copy the NixOS configuration file and link it from the resulting system

@@ -23,6 +23,18 @@
       fsType = "vfat";
     };
 
+  fileSystems."/media" =
+    { device = "/dev/disk/by-label/Expansion";
+      fsType = "exfat";
+      options = [
+	  "nofail"
+	  "x-systemd.device-timeout=1s"
+	  "uid=liam"
+	  "gid=removable-storage"
+	  "umask=002"
+	];
+    };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
