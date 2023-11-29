@@ -8,6 +8,12 @@
      wget
      git
 
+     # web server
+     nginx
+
+     # irc
+     thelounge
+
      # media
      jellyfin
      jellyfin-web

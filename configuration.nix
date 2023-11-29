@@ -28,6 +28,8 @@
       ./services/sonarr.nix
       ./services/radarr.nix
       ./services/deluge.nix
+      ./services/nginx.nix
+      ./services/thelounge.nix
     ];
 
   # Copy the NixOS configuration file and link it from the resulting system
