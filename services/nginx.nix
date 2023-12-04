@@ -3,6 +3,8 @@
 {
   services.nginx = {
     enable = true;
+    # by default nginx times out connections in one minute
+    proxyTimeout = "1d";
 
     virtualHosts."magical-hayate.net" = {
       enableACME = true;
@@ -25,21 +27,13 @@
 	locations."/" = {
 	  proxyPass = "http://127.0.0.1:9000";
 	  proxyWebsockets = true;
-	  extraConfig = ''
-		proxy_set_header Connection "upgrade";
-		proxy_set_header Upgrade $http_upgrade";
-		proxy_set_header X-Forwarded-For $remote_addr";
-		proxy_set_header X-Forwarded-Proto $scheme";
-
-		# by default nginx times out connections in one minute
-		proxy_read_timeout 1d;
-	'';
+	  recommendedProxySettings = true;
 	};
 
 	locations."/uploads/" = {
 	  proxyPass = "http://127.0.0.1:9000/uploads/";
 	  proxyWebsockets = true;
-	  extraConfig = ''proxy_set_header X-Forwarded-For $remote_addr;'';
+	  recommendedProxySettings = true;
 	};
     };
   };
@@ -49,4 +43,3 @@
     defaults.email = "liamash3@gmail.com";
   };
 }
-
