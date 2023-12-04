@@ -23,6 +23,9 @@
       ./settings/networking.nix
       ./settings/firewall.nix
 
+      # hardware acceleration
+      ./settings/hardware-accel.nix
+
       # services
       ./services/jellyfin.nix
       ./services/sonarr.nix
