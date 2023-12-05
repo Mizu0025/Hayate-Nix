@@ -31,6 +31,8 @@
       ./services/sonarr.nix
       ./services/radarr.nix
       ./services/deluge.nix
+
+       # web server
       ./services/nginx.nix
       ./services/thelounge.nix
     ];
