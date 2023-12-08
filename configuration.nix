@@ -26,7 +26,7 @@
       # hardware acceleration
       ./settings/hardware-accel.nix
 
-      # services
+      # media management
       ./services/jellyfin.nix
       ./services/sonarr.nix
       ./services/radarr.nix

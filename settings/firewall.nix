@@ -1,7 +1,32 @@
 {
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 80 443 9000 ];
-  networking.firewall.allowedUDPPorts = [ 80 443 9000 ];
+  networking.firewall.allowedTCPPorts = [ 
+	# nginx
+	80 443 
+	
+	# irc client
+	9000 
+
+	# gluetun vpn
+        8888 8388
+
+	# deluge
+        8112 6881
+  ];
+  networking.firewall.allowedUDPPorts = [ 
+	# nginx 
+	80 443 
+
+	# irc client
+	9000 
+
+	# gluetun vpn
+	8388
+
+	# deluge
+	6881
+  ];
+
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 }
