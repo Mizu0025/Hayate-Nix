@@ -26,6 +26,9 @@
       # hardware acceleration
       ./settings/hardware-accel.nix
 
+      # artbots
+      ./services/comfyui.nix
+
       # media management
       ./services/jellyfin.nix
       ./services/sonarr.nix

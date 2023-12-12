@@ -12,6 +12,9 @@
      wget
      git
 
+     # ai artbot
+     steam-run
+
      # motd
      figlet
 

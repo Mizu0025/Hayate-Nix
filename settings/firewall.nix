@@ -12,6 +12,9 @@
 
 	# deluge
         8112 6881
+
+	# artbot comfyui
+	8188
   ];
   networking.firewall.allowedUDPPorts = [ 
 	# nginx 
