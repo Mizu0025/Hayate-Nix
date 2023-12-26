@@ -23,6 +23,9 @@
       ./settings/networking.nix
       ./settings/firewall.nix
 
+      # games
+      ./services/steam.nix
+
       # hardware acceleration
       ./settings/hardware-accel.nix
 
@@ -33,7 +36,7 @@
       ./services/jellyfin.nix
       ./services/sonarr.nix
       ./services/radarr.nix
-      ./services/deluge.nix
+      ./services/virtualisation.nix
 
        # web server
       ./services/nginx.nix

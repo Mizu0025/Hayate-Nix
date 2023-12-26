@@ -11,6 +11,8 @@
      vim
      wget
      git
+     docker
+     docker-compose
 
      # ai artbot
      steam-run
