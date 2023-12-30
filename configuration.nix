@@ -23,9 +23,6 @@
       ./settings/networking.nix
       ./settings/firewall.nix
 
-      # games
-      ./services/steam.nix
-
       # hardware acceleration
       ./settings/hardware-accel.nix
 
@@ -34,8 +31,6 @@
 
       # media management
       ./services/jellyfin.nix
-      ./services/sonarr.nix
-      ./services/radarr.nix
       ./services/virtualisation.nix
 
        # web server

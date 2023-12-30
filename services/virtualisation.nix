@@ -10,6 +10,12 @@
 
         # prowlarr
         9696
+
+	# sonarr 
+	8989
+
+	# radarr
+	7878
   ];
   networking.firewall.allowedUDPPorts = [
         # gluetun
@@ -30,6 +36,8 @@
         "8112:8112" # deluge
         "6881:6881" # deluge
 	"9696:9696" # prowlarr
+	"8989:8989" # sonarr
+	"7878:7878" # radarr
         ];
         environmentFiles = [
           /etc/nixos/virtualisation/env-gluetun.txt
@@ -52,13 +60,13 @@
         ];
         environment = {
           TZ = "Australia/Melbourne";
+	  PUID = "1000"; # liam
+	  GUID = "988"; # removable-storage
           DELUGE_LOGLEVEL = "info";
-	  PUID = "1000";
-	  GUID = "988";
-        };
+	};
         volumes = [
           "/var/lib/deluge:/config"
-          "/media/Downloads:/downloads"
+          "/media/Downloads:/media/Downloads"
         ];
 	extraOptions = [
 	  "--network=container:gluetun"
@@ -72,13 +80,53 @@
         ];
         environment = {
           TZ = "Australia/Melbourne";
-	  PUID = "1000";
-	  GUID = "100";
+	  PUID = "1000"; # liam
+	  GUID = "100"; # liam
         };
         volumes = [
           "/var/lib/prowlarr:/config"
         ];
-	extraOptions = [
+	extraOptions = [	  
+	  "--network=container:gluetun"
+	];
+  };
+
+  virtualisation.oci-containers.containers."sonarr" = {
+        image = "lscr.io/linuxserver/sonarr:latest";
+        dependsOn = [
+          "gluetun"
+        ];
+        environment = {
+          TZ = "Australia/Melbourne";
+	  PUID = "1000"; # liam
+	  GUID = "988"; # removable-storage
+        };
+        volumes = [
+          "/var/lib/sonarr:/config"
+	  "/media/TVShows:/media/TVShows"
+	  "/media/Downloads:/media/Downloads"
+        ];
+	extraOptions = [	  
+	  "--network=container:gluetun"
+	];
+  };
+
+  virtualisation.oci-containers.containers."radarr" = {
+        image = "lscr.io/linuxserver/radarr:latest";
+        dependsOn = [
+          "gluetun"
+        ];
+        environment = {
+          TZ = "Australia/Melbourne";
+	  PUID = "1000"; # liam
+	  GUID = "988"; # removable-storage
+        };
+        volumes = [
+          "/var/lib/radarr:/config"
+	  "/media/Movies:/media/Movies"
+	  "/media/Downloads:/media/Downloads"
+        ];
+	extraOptions = [	  
 	  "--network=container:gluetun"
 	];
   };
