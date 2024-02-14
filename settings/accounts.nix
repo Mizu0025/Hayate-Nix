@@ -19,5 +19,8 @@
     removable-storage = {
 	members = [ "liam, jellyfin, sonarr, radarr, deluge" ];
     };
+    artbot = {
+	members = [ "liam" ];
+    };
   };
 }

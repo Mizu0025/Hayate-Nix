@@ -29,6 +29,11 @@ in {
   };
   users.groups.${app} = {};
 
+  # allows access to artbot folder
+  systemd.services.nginx.serviceConfig = {
+    SupplementaryGroups = [ "artbot" ];
+  };
+  
   services.nginx = {
     enable = true;
     # by default nginx times out connections in one minute
@@ -64,6 +69,15 @@ in {
 	extraConfig = ''
 	fastcgi_pass unix:${config.services.phpfpm.pools.${app}.socket};
         include ${pkgs.nginx}/conf/fastcgi_params;
+	'';
+      };
+
+      locations."/comfyui/" = {
+	alias = "/artbot/";
+	extraConfig = ''
+		autoindex on; 
+		autoindex_exact_size off; 
+		autoindex_localtime on;
 	'';
       };
     };

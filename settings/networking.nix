@@ -11,4 +11,7 @@
   
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # Allow VSCode remote-ssh
+  programs.nix-ld.enable = true;
 }

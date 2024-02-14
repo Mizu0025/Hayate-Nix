@@ -13,9 +13,15 @@
      git
      docker
      docker-compose
+     bind # for nslookup
 
      # ai artbot
      steam-run
+
+     # coding
+     python3
+     rustc
+     cargo
 
      # motd
      figlet
