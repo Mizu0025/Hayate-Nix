@@ -7,6 +7,7 @@
   users.users = {
     liam = {
       isNormalUser = true;
+      uid = 1000;
       extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     };
 
@@ -18,6 +19,7 @@
   users.groups = {
     removable-storage = {
 	members = [ "liam, jellyfin, sonarr, radarr, deluge" ];
+	gid = 988;
     };
     artbot = {
 	members = [ "liam" ];

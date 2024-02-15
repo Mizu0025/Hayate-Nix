@@ -1,3 +1,7 @@
+let 
+  USERID = "1000"; # liam
+  GROUPID = "988"; # removable-storage
+in
 {
   networking.firewall.allowedTCPPorts = [
         # gluetun
@@ -59,9 +63,9 @@
           "gluetun"
         ];
         environment = {
+	  PUID = USERID;
+	  PGID = GROUPID;
           TZ = "Australia/Melbourne";
-	  PUID = "1000"; # liam
-	  GUID = "988"; # removable-storage
           DELUGE_LOGLEVEL = "info";
 	};
         volumes = [
@@ -79,9 +83,9 @@
           "gluetun"
         ];
         environment = {
+	  PUID = USERID;
+	  PGID = GROUPID;
           TZ = "Australia/Melbourne";
-	  PUID = "1000"; # liam
-	  GUID = "100"; # liam
         };
         volumes = [
           "/var/lib/prowlarr:/config"
@@ -97,9 +101,9 @@
           "gluetun"
         ];
         environment = {
+	  PUID = USERID;
+	  PGID = GROUPID;
           TZ = "Australia/Melbourne";
-	  PUID = "1000"; # liam
-	  GUID = "988"; # removable-storage
         };
         volumes = [
           "/var/lib/sonarr:/config"
@@ -117,9 +121,9 @@
           "gluetun"
         ];
         environment = {
+	  PUID = USERID;
+	  PGID = GROUPID;
           TZ = "Australia/Melbourne";
-	  PUID = "1000"; # liam
-	  GUID = "988"; # removable-storage
         };
         volumes = [
           "/var/lib/radarr:/config"
