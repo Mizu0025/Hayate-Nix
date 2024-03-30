@@ -19,9 +19,7 @@
      steam-run
 
      # coding
-     python3
-     rustc
-     cargo
+     nodejs_21
 
      # motd
      figlet

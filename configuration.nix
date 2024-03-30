@@ -32,6 +32,8 @@
       # media management
       ./services/jellyfin.nix
       ./services/virtualisation.nix
+      ./services/samba.nix
+      ./services/syncthing.nix
 
        # web server
       ./services/nginx.nix

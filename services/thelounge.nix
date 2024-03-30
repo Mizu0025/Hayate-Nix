@@ -8,12 +8,12 @@
       reverseProxy = true;
       theme="morning";
       prefetch = true;
-      prefetchMaxImageSize=5120; # kb
+      prefetchMaxImageSize=30720; # kb
 
       # file upload
       fileUpload = {
 	enable = true;
-	maxFileSize = 10240; # kb
+	maxFileSize = 5120; # kb
 	# baseUrl needs reverse-proxy configured, else set to null
 	baseUrl = null;
       };
